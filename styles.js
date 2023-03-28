@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"; // component-driven CSS methodology used in React; Styled Components is a library for React
 
 export default createGlobalStyle`
   *,
