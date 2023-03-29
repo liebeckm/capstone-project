@@ -5,8 +5,15 @@ export const StyledCard = styled.article`
   grid-template-columns: 40% 60%;
   align-items: center;
   justify-items: start;
-  padding: 1rem;
-  margin: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-left: -1rem;
+  margin-right: 1rem;
   border-radius: 1.5rem;
-  background-color: #f1d9a6;
+  background-color: var(--yellow);
+`;
+export const StyledSpan = styled.span`
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 `;

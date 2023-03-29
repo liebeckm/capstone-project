@@ -10,4 +10,9 @@ export default createGlobalStyle`
     margin: 0;
     font-family: system-ui;
   }
+
+  :root {
+    --yellow: #f1d9a6;
+    --white: #ffffff;
+  }
 `;
