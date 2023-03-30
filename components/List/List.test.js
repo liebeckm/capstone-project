@@ -1,4 +1,4 @@
-import List from ".";
+import List from "./List";
 import { render, screen } from "@testing-library/react";
 
 const testRides = [

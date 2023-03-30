@@ -1,5 +1,4 @@
-import { createGlobalStyle } from "styled-components"; // component-driven CSS methodology used in React; Styled Components is a library for React
-
+import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
   *,
   *::before,
@@ -9,6 +8,12 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   :root {
