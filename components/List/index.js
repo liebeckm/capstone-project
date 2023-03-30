@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function List({ rides }) {
   return (
-    <ul>
+    <div>
       {rides.map((ride) => (
         <StyledCard key={ride.id}>
           <p>
@@ -23,7 +23,7 @@ export default function List({ rides }) {
             <StyledSpan>
               {ride.date}, {ride.time}
             </StyledSpan>
-            Von: {ride.departure}
+            <StyledSpan>Von: {ride.departure}</StyledSpan>
             <StyledSpan>Nach: {ride.destination}</StyledSpan>
             <StyledSpan>Verfügbare Sitzplätze: {ride.seats}</StyledSpan>
             <StyledSpan>
@@ -33,6 +33,6 @@ export default function List({ rides }) {
           </p>
         </StyledCard>
       ))}
-    </ul>
+    </div>
   );
 }
