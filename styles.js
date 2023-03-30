@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-
 export default createGlobalStyle`
   *,
   *::before,
@@ -9,5 +8,16 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --yellow: #f1d9a6;
+    --white: #ffffff;
   }
 `;
