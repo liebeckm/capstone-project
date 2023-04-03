@@ -5,10 +5,14 @@ import {
   StyledDescriptionDetails,
   StyledDateAndTime,
 } from "../Card/Card.styled";
-
+import { StyledLink } from "../Link/Link.styled";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function List({ rides }) {
+  const router = useRouter();
+  const { slug } = router.query;
+
   return (
     <ul role="list">
       {rides.map((ride) => (
@@ -39,9 +43,7 @@ export default function List({ rides }) {
                 <StyledDescriptionDetails>
                   {ride.destination}
                 </StyledDescriptionDetails>
-                <StyledDescriptionTerm>
-                  Verfügbare Sitzplätze:
-                </StyledDescriptionTerm>
+                <StyledDescriptionTerm>Sitzplätze:</StyledDescriptionTerm>
                 <StyledDescriptionDetails>
                   {ride.seats}
                 </StyledDescriptionDetails>
@@ -51,6 +53,12 @@ export default function List({ rides }) {
                   {ride.currency}
                 </StyledDescriptionDetails>
               </dl>
+            </section>
+            <section>
+              {" "}
+              <StyledLink href={`./detail-ride/${ride.slug}`}>
+                Auswählen
+              </StyledLink>
             </section>
           </StyledCard>
         </li>

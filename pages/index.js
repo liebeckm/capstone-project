@@ -3,7 +3,6 @@ import { rides } from "../lib/rides";
 import React from "react";
 import SecondHeading from "../components/SecondHeading/SecondHeading.styled";
 import List from "../components/List/List";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,7 +10,11 @@ export default function Home() {
       <Heading>landwaerts</Heading>
       <SecondHeading>Übersicht – Alle Fahrten</SecondHeading>
       <List rides={rides} />
-      <a href="http://localhost:3000/detail-ride">Detail Page</a>
+      <ul>
+        {rides.map((rides) => (
+          <li key={rides.id}></li>
+        ))}
+      </ul>
     </main>
   );
 }
