@@ -7,12 +7,8 @@ import {
 } from "../Card/Card.styled";
 import { StyledLink } from "../Link/Link.styled";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 export default function List({ rides }) {
-  const router = useRouter();
-  const { slug } = router.query;
-
   return (
     <ul role="list">
       {rides.map((ride) => (

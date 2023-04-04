@@ -79,12 +79,13 @@ const testRides = [
   },
 ];
 
-test("auswählen link leads to the fitting details page", () => {
+test("has the correct href attribute.", () => {
   render(
-    <StyledLink href={`./detail-ride/${testRides.slug}`}>Auswählen</StyledLink>
+    <StyledLink href={`/detail-ride/${testRides[0].slug}`}>
+      Auswählen
+    </StyledLink>
   );
-  const slug = screen.getAllByRole("link");
-  expect(slug[0]).toHaveBeenCalledWith("/details-page/ride-1");
-  expect(slug[1]).toHaveBeenCalledWith("/details-page/ride-2");
-  expect(slug[2]).toHaveBeenCalledWith("/details-page/ride-3");
+
+  const Link = screen.getByRole("link");
+  expect(Link).toHaveAttribute("href", "/detail-ride/ride-1");
 });

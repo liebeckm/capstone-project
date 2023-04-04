@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { StyledLink } from "../../components/Link/Link.styled";
+
 export default function DetailPage() {
   const router = useRouter();
   const { slug } = router.query;
