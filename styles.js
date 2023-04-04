@@ -17,7 +17,8 @@ export default createGlobalStyle`
   }
 
   :root {
-    --yellow: #f1d9a6;
+    --yellow: #F8DDA4;
     --white: #ffffff;
+    --green: #7FB069;
   }
 `;

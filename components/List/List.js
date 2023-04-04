@@ -5,7 +5,7 @@ import {
   StyledDescriptionDetails,
   StyledDateAndTime,
 } from "../Card/Card.styled";
-
+import { StyledLink } from "../Link/Link.styled";
 import Image from "next/image";
 
 export default function List({ rides }) {
@@ -39,9 +39,7 @@ export default function List({ rides }) {
                 <StyledDescriptionDetails>
                   {ride.destination}
                 </StyledDescriptionDetails>
-                <StyledDescriptionTerm>
-                  Verfügbare Sitzplätze:
-                </StyledDescriptionTerm>
+                <StyledDescriptionTerm>Sitzplätze:</StyledDescriptionTerm>
                 <StyledDescriptionDetails>
                   {ride.seats}
                 </StyledDescriptionDetails>
@@ -51,6 +49,12 @@ export default function List({ rides }) {
                   {ride.currency}
                 </StyledDescriptionDetails>
               </dl>
+            </section>
+            <section>
+              {" "}
+              <StyledLink href={`./detail-ride/${ride.slug}`}>
+                Auswählen
+              </StyledLink>
             </section>
           </StyledCard>
         </li>

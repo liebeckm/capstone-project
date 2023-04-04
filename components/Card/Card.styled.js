@@ -2,7 +2,20 @@ import styled from "styled-components";
 
 export const StyledCard = styled.article`
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 30% 30% 20%;
+  gap: 1rem;
+  align-items: center;
+  justify-items: start;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--yellow);
+  font-size: 14px;
+`;
+
+export const StyledCardForDetailPage = styled.article`
+  display: grid;
+  grid-template-columns: 100%;
   gap: 1rem;
   align-items: center;
   justify-items: start;
@@ -12,8 +25,35 @@ export const StyledCard = styled.article`
   background-color: var(--yellow);
 `;
 
+export const StyledPreCardForDetailPage = styled.article`
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 1rem;
+  align-items: center;
+  justify-items: start;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--white);
+`;
 export const StyledSpan = styled.span`
   margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+`;
+export const StyledSpanForDetailPage = styled.span`
+  margin-bottom: 3rem;
+  grid-row-start: 1;
+  grid-column-start: 2;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+`;
+export const StyledSpanForDetailPageTwo = styled.span`
+  margin-bottom: 1rem;
+  grid-row-start: 1;
+  grid-column-start: 2;
   margin-left: 0.5rem;
   display: flex;
   flex-direction: column;

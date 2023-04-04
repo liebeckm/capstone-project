@@ -10,6 +10,11 @@ export default function Home() {
       <Heading>landwaerts</Heading>
       <SecondHeading>Übersicht – Alle Fahrten</SecondHeading>
       <List rides={rides} />
+      <ul>
+        {rides.map((rides) => (
+          <li key={rides.id}></li>
+        ))}
+      </ul>
     </main>
   );
 }
