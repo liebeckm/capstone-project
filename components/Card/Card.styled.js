@@ -42,6 +42,22 @@ export const StyledSpan = styled.span`
   display: flex;
   flex-direction: column;
 `;
+export const StyledSpanForDetailPage = styled.span`
+  margin-bottom: 3rem;
+  grid-row-start: 1;
+  grid-column-start: 2;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+`;
+export const StyledSpanForDetailPageTwo = styled.span`
+  margin-bottom: 1rem;
+  grid-row-start: 1;
+  grid-column-start: 2;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+`;
 
 export const StyledDescriptionTerm = styled.dt`
   margin-bottom: 0.5rem;

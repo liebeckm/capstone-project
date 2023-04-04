@@ -8,7 +8,10 @@ import {
   StyledDateAndTime,
   StyledSpan,
   StyledPreCardForDetailPage,
+  StyledSpanForDetailPage,
+  StyledSpanForDetailPageTwo,
 } from "../../components/Card/Card.styled";
+
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { StyledLink } from "../../components/Link/Link.styled";
@@ -48,11 +51,8 @@ export default function DetailPage() {
             height={100}
           />
         </StyledSpan>
-        <StyledSpan>
-          {driver}
-          <br />
-          {car}
-        </StyledSpan>
+        <StyledSpanForDetailPage>{driver}</StyledSpanForDetailPage>
+        <StyledSpanForDetailPageTwo>{car}</StyledSpanForDetailPageTwo>
       </StyledPreCardForDetailPage>
       <StyledCardForDetailPage>
         <section>
