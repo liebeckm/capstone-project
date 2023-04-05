@@ -12,7 +12,7 @@ export default function List({ rides }) {
   return (
     <ul role="list">
       {rides.map((ride) => (
-        <li key={ride.id}>
+        <li key={ride.slug}>
           <StyledCard>
             <section>
               <StyledSpan>{ride.driver}</StyledSpan>
@@ -54,6 +54,9 @@ export default function List({ rides }) {
               {" "}
               <StyledLink href={`./detail-ride/${ride.slug}`}>
                 Auswählen
+              </StyledLink>
+              <StyledLink href={`./booking-confirmation/${ride.slug}`}>
+                Buchen
               </StyledLink>
             </section>
           </StyledCard>

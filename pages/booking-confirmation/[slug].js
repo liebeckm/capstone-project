@@ -19,7 +19,7 @@ import {
   StyledLinkWrapper,
 } from "../../components/Link/Link.styled";
 
-export default function DetailPage({ ride }) {
+export default function Bookingconfirmation() {
   const router = useRouter();
   const { slug } = router.query;
   const extractedRide = rides.find((ride) => ride.slug === slug);
@@ -39,12 +39,13 @@ export default function DetailPage({ ride }) {
     seats,
     price,
     currency,
+    contact,
   } = extractedRide;
 
   return (
     <main>
       <Heading>landwaerts</Heading>
-      <SecondHeading>Ausgewählte Fahrt</SecondHeading>
+      <SecondHeading>Fahrt gebucht!</SecondHeading>
       <StyledPreCardForDetailPage>
         <StyledSpan>
           <Image
@@ -59,6 +60,13 @@ export default function DetailPage({ ride }) {
       </StyledPreCardForDetailPage>
       <StyledCardForDetailPage>
         <section>
+          <StyledDescriptionTerm>
+            Bitte kontaktiere {driver}
+          </StyledDescriptionTerm>
+          <section>
+            <StyledDescriptionTerm>Kontakt:</StyledDescriptionTerm>
+            <StyledDescriptionDetails>{contact}</StyledDescriptionDetails>
+          </section>
           <StyledDateAndTime>
             {date}, {time}
           </StyledDateAndTime>
@@ -84,9 +92,6 @@ export default function DetailPage({ ride }) {
       <div>
         <StyledLinkWrapper>
           <StyledLink href={`/`}>Zurück zu allen Fahrten</StyledLink>
-          <StyledLink href={`./booking-confirmation/${rides.slug}`}>
-            Buchen
-          </StyledLink>
         </StyledLinkWrapper>
       </div>
     </main>
