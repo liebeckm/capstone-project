@@ -82,3 +82,29 @@ export const StyledDateAndTime = styled.p`
   font-weight: 800;
   font-size: 16px;
 `;
+
+export const StyledContactCall = styled.p`
+  margin-bottom: 0.7rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StyledPaymentInformationAlert = styled.p`
+  margin-left: 0.5rem;
+  margin-bottom: -1rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--red);
+`;
+
+export const StyledPaymentInformation = styled.p`
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--red);
+`;

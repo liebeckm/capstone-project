@@ -55,9 +55,6 @@ export default function List({ rides }) {
               <StyledLink href={`./detail-ride/${ride.slug}`}>
                 Auswählen
               </StyledLink>
-              <StyledLink href={`./booking-confirmation/${ride.slug}`}>
-                Buchen
-              </StyledLink>
             </section>
           </StyledCard>
         </li>

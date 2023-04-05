@@ -1,5 +1,5 @@
 import Heading from "../../components/Heading/Heading.styled";
-import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
+import SecondHeadingSticky from "../../components/SecondHeading/SecondHeading.styled";
 import { rides } from "../../lib/rides";
 import {
   StyledCardForDetailPage,
@@ -18,12 +18,19 @@ import {
   StyledLink,
   StyledLinkWrapper,
 } from "../../components/Link/Link.styled";
+import { useState } from "react";
 
 export default function DetailPage({ ride }) {
   const router = useRouter();
   const { slug } = router.query;
   const extractedRide = rides.find((ride) => ride.slug === slug);
-
+  const [bookedRides, setBookedRides] = useState([]);
+  const handleBookRide = () => {
+    bookedRides(ride);
+  };
+  const handleConfirmBooking = () => {
+    setBookedRides((prevBookedRides) => [...prevBookedRides, ride]);
+  };
   if (!extractedRide) {
     return null;
   }
@@ -44,7 +51,7 @@ export default function DetailPage({ ride }) {
   return (
     <main>
       <Heading>landwaerts</Heading>
-      <SecondHeading>Ausgewählte Fahrt</SecondHeading>
+      <SecondHeadingSticky>Ausgewählte Fahrt</SecondHeadingSticky>
       <StyledPreCardForDetailPage>
         <StyledSpan>
           <Image
@@ -84,7 +91,10 @@ export default function DetailPage({ ride }) {
       <div>
         <StyledLinkWrapper>
           <StyledLink href={`/`}>Zurück zu allen Fahrten</StyledLink>
-          <StyledLink href={`./booking-confirmation/${rides.slug}`}>
+          <StyledLink
+            href={`./booking-confirmation/${slug}`}
+            onClick={handleBookRide}
+          >
             Buchen
           </StyledLink>
         </StyledLinkWrapper>

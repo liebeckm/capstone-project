@@ -1,6 +1,6 @@
-import Heading from "../../components/Heading/Heading.styled";
-import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
-import { rides } from "../../lib/rides";
+import Heading from "../../../components/Heading/Heading.styled";
+import SecondHeadingNonSticky from "../../../components/SecondHeading/SecondHeadingNonSticky.styled";
+import { rides } from "../../../lib/rides";
 import {
   StyledCardForDetailPage,
   StyledDescriptionTerm,
@@ -10,14 +10,17 @@ import {
   StyledPreCardForDetailPage,
   StyledSpanForDetailPage,
   StyledSpanForDetailPageTwo,
-} from "../../components/Card/Card.styled";
+  StyledContactCall,
+  StyledPaymentInformationAlert,
+  StyledPaymentInformation,
+} from "../../../components/Card/Card.styled";
 
 import Image from "next/image";
 import { useRouter } from "next/router";
 import {
   StyledLink,
   StyledLinkWrapper,
-} from "../../components/Link/Link.styled";
+} from "../../../components/Link/Link.styled";
 
 export default function Bookingconfirmation() {
   const router = useRouter();
@@ -45,7 +48,7 @@ export default function Bookingconfirmation() {
   return (
     <main>
       <Heading>landwaerts</Heading>
-      <SecondHeading>Fahrt gebucht!</SecondHeading>
+      <SecondHeadingNonSticky>Fahrt gebucht!</SecondHeadingNonSticky>
       <StyledPreCardForDetailPage>
         <StyledSpan>
           <Image
@@ -60,13 +63,12 @@ export default function Bookingconfirmation() {
       </StyledPreCardForDetailPage>
       <StyledCardForDetailPage>
         <section>
-          <StyledDescriptionTerm>
-            Bitte kontaktiere {driver}
-          </StyledDescriptionTerm>
-          <section>
+          <StyledContactCall>Bitte kontaktiere {driver}.</StyledContactCall>
+          <dl>
             <StyledDescriptionTerm>Kontakt:</StyledDescriptionTerm>
             <StyledDescriptionDetails>{contact}</StyledDescriptionDetails>
-          </section>
+          </dl>
+          <StyledDateAndTime>Deine Fahrt:</StyledDateAndTime>
           <StyledDateAndTime>
             {date}, {time}
           </StyledDateAndTime>
@@ -87,6 +89,12 @@ export default function Bookingconfirmation() {
               {currency}
             </StyledDescriptionDetails>
           </dl>
+          <StyledPaymentInformationAlert>
+            Achtung!
+          </StyledPaymentInformationAlert>
+          <StyledPaymentInformation>
+            Bitte passend und in bar zahlen!
+          </StyledPaymentInformation>
         </section>
       </StyledCardForDetailPage>
       <div>
