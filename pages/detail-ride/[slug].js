@@ -14,23 +14,23 @@ import {
 
 import Image from "next/image";
 import { useRouter } from "next/router";
+
 import {
   StyledLink,
   StyledLinkWrapper,
 } from "../../components/Link/Link.styled";
-import { useState } from "react";
 
-export default function DetailPage({ ride }) {
+export default function DetailPage({ bookedRides, setBookedRides }) {
   const router = useRouter();
   const { slug } = router.query;
   const extractedRide = rides.find((ride) => ride.slug === slug);
-  const [bookedRides, setBookedRides] = useState([]);
-  const handleBookRide = () => {
-    bookedRides(ride);
+
+  const handleBookRide = (event) => {
+    event.preventDefault();
+    setBookedRides([...bookedRides, extractedRide]);
+    router.push("/my-rides");
   };
-  const handleConfirmBooking = () => {
-    setBookedRides((prevBookedRides) => [...prevBookedRides, ride]);
-  };
+
   if (!extractedRide) {
     return null;
   }
@@ -93,7 +93,9 @@ export default function DetailPage({ ride }) {
           <StyledLink href={`/`}>Zurück zu allen Fahrten</StyledLink>
           <StyledLink
             href={`./booking-confirmation/${slug}`}
-            onClick={handleBookRide}
+            onClick={(event) => {
+              handleBookRide(event);
+            }}
           >
             Buchen
           </StyledLink>
