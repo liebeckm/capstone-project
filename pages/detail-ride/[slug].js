@@ -19,16 +19,16 @@ import {
   StyledLink,
   StyledLinkWrapper,
 } from "../../components/Link/Link.styled";
+import { BookingButton } from "../../components/Button/BookingButton.styled";
 
 export default function DetailPage({ bookedRides, setBookedRides }) {
   const router = useRouter();
   const { slug } = router.query;
   const extractedRide = rides.find((ride) => ride.slug === slug);
 
-  const handleBookRide = (event) => {
-    event.preventDefault();
+  const handleBookRide = () => {
     setBookedRides([...bookedRides, extractedRide]);
-    router.push("/my-rides");
+    router.push(`./booking-confirmation/${slug}`);
   };
 
   if (!extractedRide) {
@@ -91,14 +91,7 @@ export default function DetailPage({ bookedRides, setBookedRides }) {
       <div>
         <StyledLinkWrapper>
           <StyledLink href={`/`}>Zurück zu allen Fahrten</StyledLink>
-          <StyledLink
-            href={`./booking-confirmation/${slug}`}
-            onClick={(event) => {
-              handleBookRide(event);
-            }}
-          >
-            Buchen
-          </StyledLink>
+          <BookingButton onClick={handleBookRide}>Buchen</BookingButton>
         </StyledLinkWrapper>
       </div>
     </main>

@@ -1,0 +1,18 @@
+import StyledNavBar from "./NavBar.styled";
+import { NavBarLink } from "../Button/NavBarButton.styled";
+import { NavBarIcon } from "./NavBarIcon.styled";
+export default function NavBar() {
+  return (
+    <StyledNavBar className="navigation">
+      <NavBarLink href={`/my-rides`} className="my-rides">
+        <NavBarIcon
+          src={"/images/car-solid.svg"}
+          alt="icon"
+          width={25}
+          height={25}
+        />
+        Meine Fahrten
+      </NavBarLink>
+    </StyledNavBar>
+  );
+}

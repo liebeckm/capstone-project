@@ -108,3 +108,11 @@ export const StyledPaymentInformation = styled.p`
   font-size: 16px;
   color: var(--red);
 `;
+export const StyledDriverInformationCardForMyRidesPage = styled.article`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+  align-items: center;
+  justify-items: start;
+  margin: 0.5rem;
+`;

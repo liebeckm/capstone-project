@@ -15,6 +15,10 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  
+  main {
+    margin-bottom: 6rem;
+  }
 
   :root {
     --yellow: #F8DDA4;
@@ -22,5 +26,6 @@ export default createGlobalStyle`
     --green: #7FB069;
     ---darkgrey: #29282A;
     --red: #E6664E;
+    --lightbeige: #F3EAD9;
   }
 `;
