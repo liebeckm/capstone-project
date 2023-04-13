@@ -1,16 +1,14 @@
 import React from "react";
 import Heading from "../../components/Heading/Heading.styled";
-import SecondHeadingSticky from "../../components/SecondHeading/SecondHeading.styled";
+import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
 import {
-  StyledCardForDetailPage,
-  StyledDateAndTime,
+  StyledCard,
+  StyledRideInformation,
   StyledDescriptionTerm,
   StyledDescriptionDetails,
-  StyledSpanForDetailPageTwo,
   StyledSpanForDetailPage,
-  StyledDriverInformationCardForMyRidesPage,
+  StyledDriverInformation,
   StyledPaymentInformation,
-  StyledPaymentInformationAlert,
 } from "../../components/Card/Card.styled";
 import {
   StyledLink,
@@ -26,28 +24,28 @@ export default function BookedRidesPage({ bookedRides }) {
   return (
     <main>
       <Heading>landwaerts</Heading>
-      <SecondHeadingSticky>Meine Fahrten</SecondHeadingSticky>
-      <SecondHeadingSticky>Anstehend:</SecondHeadingSticky>
+      <SecondHeading>Meine Fahrten</SecondHeading>
+      <SecondHeading $sticky>Anstehend:</SecondHeading>
 
       <ul role="list">
         {bookedRides.map((ride) => (
           <li key={ride.id}>
-            <StyledCardForDetailPage>
-              <StyledDateAndTime>
+            <StyledCard>
+              <StyledRideInformation $font>
                 {ride.date}, {ride.time}
-              </StyledDateAndTime>
-              <StyledDriverInformationCardForMyRidesPage>
+              </StyledRideInformation>
+              <StyledDriverInformation>
                 <Image
                   src={"/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg"}
                   alt="profile pic"
                   width={100}
                   height={100}
                 />
-                <StyledSpanForDetailPage>{ride.driver}</StyledSpanForDetailPage>
-                <StyledSpanForDetailPageTwo>
-                  {ride.car}
-                </StyledSpanForDetailPageTwo>
-              </StyledDriverInformationCardForMyRidesPage>
+                <StyledSpanForDetailPage $marginbottom>
+                  {ride.driver}
+                </StyledSpanForDetailPage>
+                <StyledSpanForDetailPage>{ride.car}</StyledSpanForDetailPage>
+              </StyledDriverInformation>
               <dl>
                 <StyledDescriptionTerm>Kontakt:</StyledDescriptionTerm>
                 <StyledDescriptionDetails>
@@ -74,14 +72,14 @@ export default function BookedRidesPage({ bookedRides }) {
                   {ride.price}
                   {ride.currency}
                 </StyledDescriptionDetails>
-                <StyledPaymentInformationAlert>
+                <StyledPaymentInformation $marginbottom>
                   Achtung!
-                </StyledPaymentInformationAlert>
+                </StyledPaymentInformation>
                 <StyledPaymentInformation>
                   Bitte passend und in bar zahlen!
                 </StyledPaymentInformation>
               </dl>
-            </StyledCardForDetailPage>
+            </StyledCard>
           </li>
         ))}
       </ul>

@@ -1,15 +1,14 @@
 import Heading from "../../components/Heading/Heading.styled";
-import SecondHeadingSticky from "../../components/SecondHeading/SecondHeading.styled";
+import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
 import { rides } from "../../lib/rides";
 import {
-  StyledCardForDetailPage,
+  StyledCard,
   StyledDescriptionTerm,
   StyledDescriptionDetails,
-  StyledDateAndTime,
+  StyledRideInformation,
   StyledSpan,
-  StyledPreCardForDetailPage,
+  StyledDriverInformation,
   StyledSpanForDetailPage,
-  StyledSpanForDetailPageTwo,
 } from "../../components/Card/Card.styled";
 
 import Image from "next/image";
@@ -51,8 +50,8 @@ export default function DetailPage({ bookedRides, setBookedRides }) {
   return (
     <main>
       <Heading>landwaerts</Heading>
-      <SecondHeadingSticky>Ausgewählte Fahrt</SecondHeadingSticky>
-      <StyledPreCardForDetailPage>
+      <SecondHeading $sticky>Ausgewählte Fahrt</SecondHeading>
+      <StyledDriverInformation $primary>
         <StyledSpan>
           <Image
             src={"/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg"}
@@ -61,14 +60,16 @@ export default function DetailPage({ bookedRides, setBookedRides }) {
             height={100}
           />
         </StyledSpan>
-        <StyledSpanForDetailPage>{driver}</StyledSpanForDetailPage>
-        <StyledSpanForDetailPageTwo>{car}</StyledSpanForDetailPageTwo>
-      </StyledPreCardForDetailPage>
-      <StyledCardForDetailPage>
+        <StyledSpanForDetailPage $marginbottom>
+          {driver}
+        </StyledSpanForDetailPage>
+        <StyledSpanForDetailPage>{car}</StyledSpanForDetailPage>
+      </StyledDriverInformation>
+      <StyledCard>
         <section>
-          <StyledDateAndTime>
+          <StyledRideInformation $font>
             {date}, {time}
-          </StyledDateAndTime>
+          </StyledRideInformation>
           <dl>
             <StyledDescriptionTerm>Von:</StyledDescriptionTerm>
             <StyledDescriptionDetails>{departure}</StyledDescriptionDetails>
@@ -76,9 +77,7 @@ export default function DetailPage({ bookedRides, setBookedRides }) {
             <StyledDescriptionDetails>{meetingpoint}</StyledDescriptionDetails>
             <StyledDescriptionTerm>Nach:</StyledDescriptionTerm>
             <StyledDescriptionDetails>{destination}</StyledDescriptionDetails>
-            <StyledDescriptionTerm>
-              Verfügbare Sitzplätze:
-            </StyledDescriptionTerm>
+            <StyledDescriptionTerm>Sitzplätze:</StyledDescriptionTerm>
             <StyledDescriptionDetails>{seats}</StyledDescriptionDetails>
             <StyledDescriptionTerm>Preis:</StyledDescriptionTerm>
             <StyledDescriptionDetails>
@@ -87,7 +86,7 @@ export default function DetailPage({ bookedRides, setBookedRides }) {
             </StyledDescriptionDetails>
           </dl>
         </section>
-      </StyledCardForDetailPage>
+      </StyledCard>
       <div>
         <StyledLinkWrapper>
           <StyledLink href={`/`}>Zurück zu allen Fahrten</StyledLink>

@@ -3,7 +3,7 @@ import {
   StyledDescriptionTerm,
   StyledCard,
   StyledDescriptionDetails,
-  StyledDateAndTime,
+  StyledRideInformation,
 } from "../Card/Card.styled";
 import { StyledLink } from "../Link/Link.styled";
 import Image from "next/image";
@@ -13,7 +13,7 @@ export default function List({ rides }) {
     <ul role="list">
       {rides.map((ride) => (
         <li key={ride.slug}>
-          <StyledCard>
+          <StyledCard $gridfont>
             <section>
               <StyledSpan>{ride.driver}</StyledSpan>
               <StyledSpan>
@@ -27,9 +27,9 @@ export default function List({ rides }) {
               <StyledSpan>{ride.rating}</StyledSpan>
             </section>
             <section>
-              <StyledDateAndTime>
+              <StyledRideInformation $font>
                 {ride.date}, {ride.time}
-              </StyledDateAndTime>
+              </StyledRideInformation>
               <dl>
                 <StyledDescriptionTerm>Von:</StyledDescriptionTerm>
                 <StyledDescriptionDetails>

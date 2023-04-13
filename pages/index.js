@@ -1,15 +1,14 @@
 import Heading from "../components/Heading/Heading.styled";
 import { rides } from "../lib/rides";
 import React from "react";
-import SecondHeadingSticky from "../components/SecondHeading/SecondHeading.styled";
+import SecondHeading from "../components/SecondHeading/SecondHeading.styled";
 import List from "../components/List/List";
-import { StyledLink } from "../components/Link/Link.styled";
 
 export default function Home() {
   return (
     <main>
       <Heading>landwaerts</Heading>
-      <SecondHeadingSticky>Übersicht – Alle Fahrten</SecondHeadingSticky>
+      <SecondHeading $sticky>Übersicht – Alle Fahrten</SecondHeading>
       <List rides={rides} />
       <ul>
         {rides.map((rides) => (

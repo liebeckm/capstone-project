@@ -1,17 +1,13 @@
 import Heading from "../../../components/Heading/Heading.styled";
-import SecondHeadingNonSticky from "../../../components/SecondHeading/SecondHeadingNonSticky.styled";
 import { rides } from "../../../lib/rides";
 import {
-  StyledCardForDetailPage,
+  StyledCard,
   StyledDescriptionTerm,
   StyledDescriptionDetails,
-  StyledDateAndTime,
+  StyledRideInformation,
   StyledSpan,
-  StyledPreCardForDetailPage,
+  StyledDriverInformation,
   StyledSpanForDetailPage,
-  StyledSpanForDetailPageTwo,
-  StyledContactCall,
-  StyledPaymentInformationAlert,
   StyledPaymentInformation,
 } from "../../../components/Card/Card.styled";
 
@@ -21,6 +17,7 @@ import {
   StyledLink,
   StyledLinkWrapper,
 } from "../../../components/Link/Link.styled";
+import SecondHeading from "../../../components/SecondHeading/SecondHeading.styled";
 
 export default function Bookingconfirmation() {
   const router = useRouter();
@@ -48,8 +45,8 @@ export default function Bookingconfirmation() {
   return (
     <main>
       <Heading>landwaerts</Heading>
-      <SecondHeadingNonSticky>Fahrt gebucht!</SecondHeadingNonSticky>
-      <StyledPreCardForDetailPage>
+      <SecondHeading>Fahrt gebucht!</SecondHeading>
+      <StyledDriverInformation $primary>
         <StyledSpan>
           <Image
             src={"/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg"}
@@ -58,20 +55,24 @@ export default function Bookingconfirmation() {
             height={100}
           />
         </StyledSpan>
-        <StyledSpanForDetailPage>{driver}</StyledSpanForDetailPage>
-        <StyledSpanForDetailPageTwo>{car}</StyledSpanForDetailPageTwo>
-      </StyledPreCardForDetailPage>
-      <StyledCardForDetailPage>
+        <StyledSpanForDetailPage $marginbottom>
+          {driver}
+        </StyledSpanForDetailPage>
+        <StyledSpanForDetailPage>{car}</StyledSpanForDetailPage>
+      </StyledDriverInformation>
+      <StyledCard>
         <section>
-          <StyledContactCall>Bitte kontaktiere {driver}.</StyledContactCall>
+          <StyledRideInformation>
+            Bitte kontaktiere {driver}.
+          </StyledRideInformation>
           <dl>
             <StyledDescriptionTerm>Kontakt:</StyledDescriptionTerm>
             <StyledDescriptionDetails>{contact}</StyledDescriptionDetails>
           </dl>
-          <StyledDateAndTime>Deine Fahrt:</StyledDateAndTime>
-          <StyledDateAndTime>
+          <StyledRideInformation $font>Deine Fahrt:</StyledRideInformation>
+          <StyledRideInformation $font>
             {date}, {time}
-          </StyledDateAndTime>
+          </StyledRideInformation>
           <dl>
             <StyledDescriptionTerm>Von:</StyledDescriptionTerm>
             <StyledDescriptionDetails>{departure}</StyledDescriptionDetails>
@@ -89,14 +90,14 @@ export default function Bookingconfirmation() {
               {currency}
             </StyledDescriptionDetails>
           </dl>
-          <StyledPaymentInformationAlert>
+          <StyledPaymentInformation $marginbottom>
             Achtung!
-          </StyledPaymentInformationAlert>
+          </StyledPaymentInformation>
           <StyledPaymentInformation>
             Bitte passend und in bar zahlen!
           </StyledPaymentInformation>
         </section>
-      </StyledCardForDetailPage>
+      </StyledCard>
       <div>
         <StyledLinkWrapper>
           <StyledLink href={`/`}>Zurück zu allen Fahrten</StyledLink>
