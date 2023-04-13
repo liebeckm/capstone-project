@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <Heading>landwaerts</Heading>
-      <SecondHeading>Übersicht – Alle Fahrten</SecondHeading>
+      <SecondHeading $sticky>Übersicht – Alle Fahrten</SecondHeading>
       <List rides={rides} />
       <ul>
         {rides.map((rides) => (

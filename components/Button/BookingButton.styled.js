@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Link from "next/link";
 
-export const StyledLink = styled(Link)`
+export const BookingButton = styled.button`
   background-color: var(--green);
+  font-size: 16px;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -10,11 +10,4 @@ export const StyledLink = styled(Link)`
   margin: 0.5rem;
   margin-top: 1rem;
   text-decoration: none;
-`;
-
-export const StyledLinkWrapper = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
 `;
