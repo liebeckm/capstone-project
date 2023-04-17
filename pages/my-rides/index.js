@@ -25,7 +25,8 @@ export default function BookedRidesPage({ bookedRides }) {
     <main>
       <Heading>landwaerts</Heading>
       <SecondHeading>Meine Fahrten</SecondHeading>
-      <SecondHeading $sticky>Anstehend:</SecondHeading>
+      <SecondHeading $sticky>Hier bin ich Fahrer*in:</SecondHeading>
+      <SecondHeading $sticky>Hier bin ich Mitfahrer*in:</SecondHeading>
 
       <ul role="list">
         {bookedRides.map((ride) => (
