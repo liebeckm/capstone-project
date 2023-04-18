@@ -160,7 +160,6 @@ export default function BookedRidesPage({ bookedRides, rides }) {
           </ul>
         </>
       )}
-      ;
       <StyledLinkWrapper>
         <StyledLink href={`/`}>Zurück zu allen Fahrten</StyledLink>
       </StyledLinkWrapper>
