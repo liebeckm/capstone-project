@@ -1,6 +1,8 @@
 import StyledNavBar from "./NavBar.styled";
 import { NavBarLink } from "../Button/NavBarButton.styled";
 import { NavBarIcon } from "./NavBarIcon.styled";
+import RideAddForm from "../Form/RideAddForm.styled";
+
 export default function NavBar() {
   return (
     <StyledNavBar className="navigation">

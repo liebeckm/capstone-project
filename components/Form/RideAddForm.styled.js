@@ -25,7 +25,7 @@ const RideAddForm = ({ onAdd }) => {
   return (
     <StyledForm onSubmit={handleSubmit}>
       <div>
-        <StyledLabel htmlFor="departure">Start:</StyledLabel>
+        <StyledLabel htmlFor="departure">Von:</StyledLabel>
         <StyledInput
           type="text"
           id="departure"
@@ -45,7 +45,7 @@ const RideAddForm = ({ onAdd }) => {
         />
       </div>
       <div>
-        <StyledLabel htmlFor="destination">Ziel:</StyledLabel>
+        <StyledLabel htmlFor="destination">Nach:</StyledLabel>
         <StyledInput
           type="text"
           id="destination"

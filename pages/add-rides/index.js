@@ -17,8 +17,10 @@ const formatDate = (dateString) => {
   return `${dateStringFormatted}`;
 };
 
-const RideAddPage = ({ onAddRide, rides }) => {
+const RideAddPage = ({ onAddRide }) => {
   const [isRideAdded, setIsRideAdded] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const handleAddRide = (ride) => {
     const id = uid();
     const newRide = {
@@ -33,6 +35,7 @@ const RideAddPage = ({ onAddRide, rides }) => {
     };
     onAddRide(newRide);
     setIsRideAdded(true);
+    setFormSubmitted(true);
   };
 
   return (
@@ -46,7 +49,7 @@ const RideAddPage = ({ onAddRide, rides }) => {
       ) : (
         <div></div>
       )}
-      <RideAddForm onAdd={handleAddRide} />
+      {!formSubmitted && <RideAddForm onAdd={handleAddRide} />}
     </div>
   );
 };
