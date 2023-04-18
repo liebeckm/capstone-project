@@ -7,7 +7,6 @@ import { initalRides } from "../lib/rides";
 export default function App({ Component, pageProps }) {
   const [rides, setRides] = useState(initalRides);
   const [bookedRides, setBookedRides] = useState([]);
-  console.log("Rides in der App.js:", rides);
   const handleAddRide = (newRide) => {
     setRides([...rides, newRide]);
   };

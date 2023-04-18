@@ -3,6 +3,7 @@ import RideAddForm from "../../components/Form/RideAddForm.styled";
 import Heading from "../../components/Heading/Heading.styled";
 import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
 import { StyledPaymentInformation } from "../../components/Card/Card.styled";
+import { uid } from "uid";
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -19,9 +20,11 @@ const formatDate = (dateString) => {
 const RideAddPage = ({ onAddRide, rides }) => {
   const [isRideAdded, setIsRideAdded] = useState(false);
   const handleAddRide = (ride) => {
+    const id = uid();
     const newRide = {
       ...ride,
-      slug: `ride-${rides.length + 1}`,
+      id,
+      slug: `ride-${id}`,
       currency: "€",
       meetingpoint: "",
       date: formatDate(ride.date),
