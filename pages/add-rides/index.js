@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import RideAddForm from "../../components/Form/RideAddForm.styled";
-import { rides } from "../../lib/rides";
 import Heading from "../../components/Heading/Heading.styled";
 import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
 import { StyledPaymentInformation } from "../../components/Card/Card.styled";
@@ -17,7 +16,7 @@ const formatDate = (dateString) => {
   return `${dateStringFormatted}`;
 };
 
-const RideAddPage = () => {
+const RideAddPage = ({ onAddRide, rides }) => {
   const [isRideAdded, setIsRideAdded] = useState(false);
   const handleAddRide = (ride) => {
     const newRide = {
@@ -27,8 +26,9 @@ const RideAddPage = () => {
       meetingpoint: "",
       date: formatDate(ride.date),
       time: ride.time + "Uhr",
+      isMyRide: true,
     };
-    rides.push(newRide);
+    onAddRide(newRide);
     setIsRideAdded(true);
   };
 
