@@ -1,12 +1,13 @@
 import GlobalStyle from "../styles";
 import Head from "next/head";
-import { useState } from "react";
+// import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 import NavBar from "../components/NavBar/NavBar";
 import { initalRides } from "../lib/rides";
 
 export default function App({ Component, pageProps }) {
-  const [rides, setRides] = useState(initalRides);
-  const [bookedRides, setBookedRides] = useState([]);
+  const [rides, setRides] = useLocalStorageState(initalRides);
+  const [bookedRides, setBookedRides] = useLocalStorageState([]);
   const handleAddRide = (newRide) => {
     setRides([...rides, newRide]);
   };

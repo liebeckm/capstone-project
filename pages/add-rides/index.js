@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import useLocalStorageState from "use-local-storage-state";
 import RideAddForm from "../../components/Form/RideAddForm.styled";
 import Heading from "../../components/Heading/Heading.styled";
 import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
@@ -18,8 +19,10 @@ const formatDate = (dateString) => {
 };
 
 const RideAddPage = ({ onAddRide }) => {
-  const [isRideAdded, setIsRideAdded] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  // const [isRideAdded, setIsRideAdded] = useState(false);
+  // const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isRideAdded, setIsRideAdded] = useLocalStorageState(false);
+  const [formSubmitted, setFormSubmitted] = useLocalStorageState(false);
 
   const handleAddRide = (ride) => {
     const id = uid();

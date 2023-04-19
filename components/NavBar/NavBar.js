@@ -1,12 +1,17 @@
 import StyledNavBar from "./NavBar.styled";
 import { NavBarLink } from "../Button/NavBarButton.styled";
 import { NavBarIcon } from "./NavBarIcon.styled";
-import RideAddForm from "../Form/RideAddForm.styled";
 
 export default function NavBar() {
   return (
     <StyledNavBar className="navigation">
-      <NavBarLink href={`/add-rides`} className="add-rides">
+      <NavBarLink
+        href={`/add-rides`}
+        className="add-rides"
+        onClick={() => {
+          window.location.href = "/add-rides";
+        }}
+      >
         <NavBarIcon
           src={"/images/circle-plus-solid.svg"}
           alt="icon"
