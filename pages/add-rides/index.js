@@ -1,9 +1,12 @@
 import React from "react";
-import useLocalStorageState from "use-local-storage-state";
+import { useState, useEffect } from "react";
 import RideAddForm from "../../components/Form/RideAddForm.styled";
 import Heading from "../../components/Heading/Heading.styled";
 import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
-import { StyledPaymentInformation } from "../../components/Card/Card.styled";
+import {
+  StyledPaymentInformation,
+  StyledReloadMessage,
+} from "../../components/Card/Card.styled";
 import { uid } from "uid";
 
 const formatDate = (dateString) => {
@@ -19,10 +22,8 @@ const formatDate = (dateString) => {
 };
 
 const RideAddPage = ({ onAddRide }) => {
-  // const [isRideAdded, setIsRideAdded] = useState(false);
-  // const [formSubmitted, setFormSubmitted] = useState(false);
-  const [isRideAdded, setIsRideAdded] = useLocalStorageState(false);
-  const [formSubmitted, setFormSubmitted] = useLocalStorageState(false);
+  const [isRideAdded, setIsRideAdded] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleAddRide = (ride) => {
     const id = uid();
@@ -38,21 +39,35 @@ const RideAddPage = ({ onAddRide }) => {
     };
     onAddRide(newRide);
     setIsRideAdded(true);
-    setFormSubmitted(true);
+    setIsFormSubmitted(true);
   };
+
+  useEffect(() => {
+    if (isFormSubmitted) {
+      setTimeout(() => {
+        setIsRideAdded(false);
+        setIsFormSubmitted(false);
+      }, 3000);
+    }
+  }, [isFormSubmitted]);
 
   return (
     <div>
       <Heading>landwaerts</Heading>
       <SecondHeading>Meine Fahrten</SecondHeading>
       {isRideAdded ? (
-        <StyledPaymentInformation>
-          Deine Fahrt wurde erfolgreich hinzugefügt!
-        </StyledPaymentInformation>
+        <>
+          <StyledPaymentInformation>
+            Deine Fahrt wurde erfolgreich hinzugefügt!
+          </StyledPaymentInformation>
+          <StyledReloadMessage>
+            Die Seite wird neu geladen...
+          </StyledReloadMessage>
+        </>
       ) : (
         <div></div>
       )}
-      {!formSubmitted && <RideAddForm onAdd={handleAddRide} />}
+      {!isFormSubmitted && <RideAddForm onAdd={handleAddRide} />}
     </div>
   );
 };

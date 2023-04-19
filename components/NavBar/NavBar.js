@@ -5,13 +5,7 @@ import { NavBarIcon } from "./NavBarIcon.styled";
 export default function NavBar() {
   return (
     <StyledNavBar className="navigation">
-      <NavBarLink
-        href={`/add-rides`}
-        className="add-rides"
-        onClick={() => {
-          window.location.href = "/add-rides";
-        }}
-      >
+      <NavBarLink href={`/add-rides`} className="add-rides">
         <NavBarIcon
           src={"/images/circle-plus-solid.svg"}
           alt="icon"

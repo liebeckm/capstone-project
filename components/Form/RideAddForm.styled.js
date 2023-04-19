@@ -1,23 +1,15 @@
-//import React, { useState } from "react";
-import useLocalStorageState from "use-local-storage-state";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
 const RideAddForm = ({ onAdd }) => {
-  // const [departure, setDeparture] = useState("");
-  // const [destination, setDestination] = useState("");
-  // const [meetingpoint, setMeetingpoint] = useState("");
-  // const [date, setDate] = useState("");
-  // const [time, setTime] = useState("");
-  // const [seats, setSeats] = useState("");
-  // const [price, setPrice] = useState("");
-  const [departure, setDeparture] = useLocalStorageState("");
-  const [destination, setDestination] = useLocalStorageState("");
-  const [meetingpoint, setMeetingpoint] = useLocalStorageState("");
-  const [date, setDate] = useLocalStorageState("");
-  const [time, setTime] = useLocalStorageState("");
-  const [seats, setSeats] = useLocalStorageState("");
-  const [price, setPrice] = useLocalStorageState("");
+  const [departure, setDeparture] = useState("");
+  const [destination, setDestination] = useState("");
+  const [meetingpoint, setMeetingpoint] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [seats, setSeats] = useState("");
+  const [price, setPrice] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
