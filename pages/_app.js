@@ -1,11 +1,23 @@
 import GlobalStyle from "../styles";
 import Head from "next/head";
-import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 import NavBar from "../components/NavBar/NavBar";
+import { initalRides } from "../lib/rides";
 
 export default function App({ Component, pageProps }) {
-  const [bookedRides, setBookedRides] = useState([]);
-  console.log(bookedRides);
+  const [rides, setRides] = useLocalStorageState("rides", {
+    defaultValue: initalRides,
+  });
+  const [bookedRides, setBookedRides] = useLocalStorageState("bookedRides", {
+    defaultValue: [],
+  });
+
+  const handleAddRide = (newRide) => {
+    setRides([...rides, newRide]);
+  };
+  const handleAddBookedRide = (newRide) => {
+    setBookedRides([...bookedRides, newRide]);
+  };
 
   return (
     <>
@@ -15,8 +27,10 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Component
         {...pageProps}
+        rides={rides}
         bookedRides={bookedRides}
-        setBookedRides={setBookedRides}
+        onAddRide={handleAddRide}
+        onAddBookedRide={handleAddBookedRide}
       />
       <NavBar />
     </>

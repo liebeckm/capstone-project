@@ -75,3 +75,9 @@ export const StyledPaymentInformation = styled.p`
   font-size: 16px;
   color: var(--red);
 `;
+
+export const StyledReloadMessage = styled.p`
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+`;

@@ -1,6 +1,5 @@
 import Heading from "../../components/Heading/Heading.styled";
 import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
-import { rides } from "../../lib/rides";
 import {
   StyledCard,
   StyledDescriptionTerm,
@@ -20,13 +19,13 @@ import {
 } from "../../components/Link/Link.styled";
 import { BookingButton } from "../../components/Button/BookingButton.styled";
 
-export default function DetailPage({ bookedRides, setBookedRides }) {
+export default function DetailPage({ onAddBookedRide, rides }) {
   const router = useRouter();
   const { slug } = router.query;
   const extractedRide = rides.find((ride) => ride.slug === slug);
 
   const handleBookRide = () => {
-    setBookedRides([...bookedRides, extractedRide]);
+    onAddBookedRide(extractedRide);
     router.push(`./booking-confirmation/${slug}`);
   };
 
