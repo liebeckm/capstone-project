@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import RideAddForm from "../../components/Form/RideAddForm.styled";
 import Heading from "../../components/Heading/Heading.styled";
 import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";

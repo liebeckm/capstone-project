@@ -101,7 +101,7 @@ const RideAddForm = ({ onAdd }) => {
 };
 export default RideAddForm;
 
-const StyledForm = styled.form`
+export const StyledForm = styled.form`
   background-color: var(--yellow);
   width: 100%;
   display: flex;
@@ -115,18 +115,18 @@ const StyledForm = styled.form`
   border-radius: 1.5rem;
 `;
 
-const StyledLabel = styled.label`
+export const StyledLabel = styled.label`
   font-size: 1.2rem;
 `;
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   padding: 0.5rem;
   border: none;
   border-radius: 1.5rem;
   width: 90%;
 `;
 
-const StyledAddButton = styled.button`
+export const StyledAddButton = styled.button`
   color: var(--white);
   background-color: var(--green);
   border: none;
