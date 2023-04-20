@@ -13,4 +13,8 @@ export const NavBarLink = styled(Link)`
   margin: 0.5rem;
   margin-top: 1rem;
   text-decoration: none;
+
+  &:hover {
+    background-color: var(--lightgrey);
+  }
 `;

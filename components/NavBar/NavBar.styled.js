@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledNavBar = styled.nav`
   font-size: 14px;
-  background-color: var(--lightbeige);
+  background-color: var(--lightblue);
   width: 100%;
   display: flex;
   justify-content: center;
