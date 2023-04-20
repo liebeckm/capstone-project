@@ -32,7 +32,7 @@ const RideAddPage = ({ onAddRide }) => {
       id,
       slug: `ride-${id}`,
       currency: "€",
-      meetingpoint: "",
+      meetingpoint: ride.meetingpoint,
       date: formatDate(ride.date),
       time: ride.time + "Uhr",
       isMyRide: true,
