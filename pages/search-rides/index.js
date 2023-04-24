@@ -4,6 +4,7 @@ import SecondHeading from "../../components/SecondHeading/SecondHeading.styled";
 import List from "../../components/List/List";
 import { initalRides } from "../../lib/rides";
 import RideSearchForm from "../../components/Form/RideSearchForm.styled";
+import { BookingButton } from "../../components/Button/BookingButton.styled";
 
 export default function Home() {
   const [rides, setRides] = useState(initalRides);
@@ -13,14 +14,12 @@ export default function Home() {
   const handleSearch = (formData) => {
     const filteredRides = initalRides.filter(
       (ride) =>
-        ride.departure.toLowerCase() === formData.departure.toLowerCase() &&
-        ride.destination.toLowerCase() === formData.destination.toLowerCase() &&
-        ride.date === formData.date &&
-        ride.time === formData.time &&
-        ride.seats >= formData.seats
+        ride.departure === formData.departure &&
+        ride.destination === formData.destination
     );
     setFilteredRides(filteredRides);
     setIsSearchFormVisible(false);
+    setRides(rides);
   };
 
   const handleReset = () => {
@@ -37,7 +36,9 @@ export default function Home() {
       {isSearchFormVisible ? (
         <RideSearchForm onSearch={handleSearch} />
       ) : (
-        <button onClick={handleReset}>Zurück zur Gesamtliste</button>
+        <BookingButton onClick={handleReset}>
+          Zurück zur Gesamtliste
+        </BookingButton>
       )}
       <List rides={filteredRides.length > 0 ? filteredRides : rides} />
     </main>

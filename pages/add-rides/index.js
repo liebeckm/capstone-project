@@ -53,7 +53,7 @@ const RideAddPage = ({ onAddRide }) => {
   return (
     <div>
       <Heading>landwaerts</Heading>
-      <SecondHeading>Meine Fahrten</SecondHeading>
+      <SecondHeading>Fahrt hinzufügen</SecondHeading>
       {isRideAdded ? (
         <>
           <StyledPaymentInformation>

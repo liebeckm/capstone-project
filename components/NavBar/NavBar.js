@@ -5,6 +5,15 @@ import { NavBarIcon } from "./NavBarIcon.styled";
 export default function NavBar() {
   return (
     <StyledNavBar className="navigation">
+      <NavBarLink href={`/search-rides`} className="search-rides">
+        <NavBarIcon
+          src={"/images/magnifying-glass-solid.svg"}
+          alt="icon"
+          width={25}
+          height={25}
+        />
+        Fahrt suchen
+      </NavBarLink>
       <NavBarLink href={`/add-rides`} className="add-rides">
         <NavBarIcon
           src={"/images/circle-plus-solid.svg"}

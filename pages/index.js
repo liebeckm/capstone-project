@@ -8,7 +8,6 @@ export default function Home({ rides }) {
     <main>
       <Heading>landwaerts</Heading>
       <SecondHeading $sticky>Übersicht – Alle Fahrten</SecondHeading>
-      <StyledLink href={`/search-rides`}>Fahrt suchen</StyledLink>
       <List rides={rides} />
       <ul>
         {rides.map((rides) => (

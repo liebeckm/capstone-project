@@ -16,18 +16,7 @@ export default function RideSearchForm(props) {
 
   function handleSearch(e) {
     e.preventDefault();
-    const filteredRides =
-      props.rides &&
-      props.rides.filter((ride) => {
-        return (
-          ride.departure.toLowerCase().includes(departure.toLowerCase()) &&
-          ride.destination.toLowerCase().includes(destination.toLowerCase()) &&
-          ride.date === date &&
-          ride.time === time &&
-          ride.seats >= seats
-        );
-      });
-    props.onSearch(filteredRides);
+    props.onSearch({ departure, destination, date, time, seats });
   }
 
   return (
@@ -74,7 +63,7 @@ export default function RideSearchForm(props) {
         onChange={(e) => setSeats(e.target.value)}
       />
 
-      <StyledAddButton type="submit">Search</StyledAddButton>
+      <StyledAddButton type="submit">Fahrt suchen</StyledAddButton>
     </StyledForm>
   );
 }
