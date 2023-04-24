@@ -10,4 +10,8 @@ export const BookingButton = styled.button`
   margin: 0.5rem;
   margin-top: 1rem;
   text-decoration: none;
+
+  &:hover {
+    background-color: var(--darkgreen);
+  }
 `;
